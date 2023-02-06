@@ -4,6 +4,13 @@ for tetsuyainfra.github.io
 
 ## MEMO
 
+### package.json devDependencies
+
+- utility-types
+  - useSiteMetadata で方定義を NonNullable にするために使っている
+- typescript-plugin-css-module
+  - HOGE.module.css -> HOGE.module.css.d.ts の生成
+
 ### CSS Module の定義
 
 - typescript-plugin-css-modules で生成してもらう

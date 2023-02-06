@@ -1,15 +1,17 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
   return (
     <Layout pageTitle="My Blog Posts">
       <p>My cool posts will go in here</p>
       <ul>
-        {data.allFile.nodes.map((node: any) => (
-          <li key={node.name}>{node.name}</li>
+        {data.allMarkdownRemark.nodes.map((node: any) => (
+          <li key={node.id}>
+            {node.frontmatter.date} / {node.frontmatter.title}
+          </li>
         ))}
       </ul>
     </Layout>
@@ -17,10 +19,15 @@ const BlogPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-    allFile {
+  query BlogPages {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "YYYY-MM-DD")
+          title
+        }
+        id
+        excerpt
       }
     }
   }
