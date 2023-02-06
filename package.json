@@ -1,8 +1,8 @@
 {
-  "name": "my-first-gatsby-site",
+  "name": "blog-tetsuyainfra",
   "version": "1.0.0",
   "private": true,
-  "description": "my-first-gatsby-site",
+  "description": "blog for tetsuyainfra.github.io",
   "author": "tetsuyainfra",
   "keywords": [
     "gatsby"
@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "gatsby": "^5.5.0",
+    "gatsby-plugin-postcss": "^6.5.0",
+    "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

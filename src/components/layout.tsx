@@ -8,7 +8,10 @@ import {
   navLinkText,
 } from './layout.module.css'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout: React.FC<{ pageTitle: String; children: React.ReactNode }> = ({
+  pageTitle,
+  children,
+}) => {
   return (
     <div className={container}>
       <nav>
