@@ -1,0 +1,27 @@
+# 折り返し行
+printWidth: 80
+# 複数行の場合、可能な限り末尾のコンマを出力
+trailingComma: "es5"
+# tab size
+tabWidth: 2
+# スペースをタブに変換するか
+useTabs: false
+# ステートメントの後にセミコロンを付与するか
+semi: false
+# 二重引用符の変わりに単一引用符を使う
+singleQuote: true
+# 改行の文字コード
+endOfLine: "lf"
+# 閉じる時のブラケットの位置を同じにするか
+bracketSameLine: false
+#
+overrides:
+  # - files: "*.test.js"
+  #   options:
+  #     semi: true
+  # - files:
+  #     - "*.html"
+  #     - "legacy/**/*.js"
+  #   options:
+  #     tabWidth: 4
+
