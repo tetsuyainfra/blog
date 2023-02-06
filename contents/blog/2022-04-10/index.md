@@ -7,6 +7,7 @@ tag:
   - Game
   - VampireSurvivors
 topImage: VampireSurvivors_Normal_stage4.png
+slug: vampire-survivor
 ---
 
 ## 今日やったこと

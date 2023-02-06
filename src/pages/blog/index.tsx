@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql, PageProps } from 'gatsby'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
 
 const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
   return (
@@ -9,9 +9,11 @@ const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
       <p>My cool posts will go in here</p>
       <ul>
         {data.allMarkdownRemark.nodes.map((node: any) => (
-          <li key={node.id}>
-            {node.frontmatter.date} / {node.frontmatter.title}
-          </li>
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+          </article>
         ))}
       </ul>
     </Layout>

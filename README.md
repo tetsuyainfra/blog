@@ -4,6 +4,8 @@ for tetsuyainfra.github.io
 
 ## MEMO
 
+### package.json dependencies
+
 ### package.json devDependencies
 
 - utility-types
