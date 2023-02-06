@@ -7,10 +7,11 @@ for tetsuyainfra.github.io
 ### CSS Module の定義
 
 - typescript-plugin-css-modules で生成してもらう
-- VSCode で認識させるには.vscode/setings.json を確認して再起動(設定変更した時も必要かも？)
+- VSCode で認識させるには.vscode/setings.json を確認して再起動
   ```
   "typescript.tsdk": "node_modules/typescript/lib"
   ```
+- 設定変更した時も必要で、VSCode を再起動すれば良かっただけかも？
 
 ### formatter を無視させる時
 
