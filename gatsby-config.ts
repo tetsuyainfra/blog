@@ -19,14 +19,6 @@ const config: GatsbyConfig = {
         path: `${__dirname}/contents/blog`,
       },
     },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        cssLoaderOptions: {
-          // camelCase: false,
-        },
-      },
-    },
   ],
 }
 
