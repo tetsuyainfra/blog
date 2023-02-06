@@ -93,7 +93,17 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true, /* Skip type checking all .d.ts files. */
     "plugins": [
-      {}
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCase",
+          // "customMatcher": "\\.m\\.css$",
+          // "customRenderer": "./myRenderer.js",
+          // "dotenvOptions": {},
+          // "postcssOptions": {},
+          // "rendererOptions": {}
+        }
+      },
     ]
   },
   "include": [

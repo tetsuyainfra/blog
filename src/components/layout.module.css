@@ -5,7 +5,8 @@
 }
 
 .heading {
-  color: rebeccapurple;
+  color: white;
+  background-color: rebeccapurple;
 }
 .nav-links {
   display: flex;

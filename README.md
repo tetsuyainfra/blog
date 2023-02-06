@@ -4,6 +4,14 @@ for tetsuyainfra.github.io
 
 ## MEMO
 
+### CSS Module の定義
+
+- typescript-plugin-css-modules で生成してもらう
+- VSCode で認識させるには.vscode/setings.json を確認して再起動(設定変更した時も必要かも？)
+  ```
+  "typescript.tsdk": "node_modules/typescript/lib"
+  ```
+
 ### formatter を無視させる時
 
 https://prettier.io/docs/en/ignore.html

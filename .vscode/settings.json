@@ -1,6 +1,8 @@
 {
   "editor.formatOnSave": true,
   "cSpell.words": [
-    "tetsuyainfra"
-  ]
+    "tetsuyainfra",
+    "typecheck"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
