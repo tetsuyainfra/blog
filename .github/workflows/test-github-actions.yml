@@ -31,3 +31,7 @@ jobs:
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           echo $CHECK_TEST_SECRET
           ls -la ./
+          ls -la ./public2
+          echo "test
+                BBBBBB hohohohohohoho
+          "
