@@ -1,5 +1,5 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: blog-build-actions
+run-name: ${{ github.actor }} is building on GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
@@ -7,6 +7,7 @@ jobs:
     steps:
       # このリポジトリをチェックアウトしてー
       - uses: actions/checkout@v3
+
       # Node.jsをセットアップ
       - uses: actions/setup-node@v3
         with:
