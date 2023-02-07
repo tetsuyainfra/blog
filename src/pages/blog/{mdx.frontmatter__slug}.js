@@ -11,13 +11,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 // }
 
 const BlogPost = ({ data, children }) => {
-  console.log(data, children)
+  console.log(data)
   const { title, date } = data.mdx.frontmatter;
   if (!title || !date) { return <div></div>; }
 
   return (
     <Layout pageTitle={title}>
       <p>{date}</p>
+      <p>{data.tableOfContents}</p>
       {children}
     </Layout>
   )
@@ -30,7 +31,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
       }
-      # body
+      tableOfContents
     }
   }
 `

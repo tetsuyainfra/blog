@@ -42,12 +42,17 @@ const config: GatsbyConfig = {
         mdxOptions: {
           remarkPlugins: [
             require(`remark-gfm`),
-            // wrapESMPlugin(`remark-gfm`),
+            require(`remark-slug`),
+            require(`remark-toc`),
             // To pass options, use a 2-element array with the
             // configuration in an object in the second element
             // [require(`remark-external-links`), { target: false }],
           ],
-          // rehypePlugins: [wrapESMPlugin(`rehype-slug`)],
+          rehypePlugins: [
+            // #hoge のリンクを作るやつ
+            // XSS攻撃の可能性があるので↓使った方が良い？
+            // https://github.com/unicorn-utterances/rehype-slug-custom-id#security
+          ],
 
           // // Footnotes mode (default: true)
           // footnotes: true,
