@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby'
+import remarkGfm from 'remark-gfm'
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -30,12 +31,12 @@ const config: GatsbyConfig = {
       options: {
         extensions: [`.md`, `.mdx`], //変更する行
         mdxOptions: {
-          // remarkPlugins: [
-          //   require(`remark-gfm`),
-          //   // To pass options, use a 2-element array with the
-          //   // configuration in an object in the second element
-          //   // [require(`remark-external-links`), { target: false }],
-          // ],
+          remarkPlugins: [
+            // require(`remark-gfm`),
+            // To pass options, use a 2-element array with the
+            // configuration in an object in the second element
+            // [require(`remark-external-links`), { target: false }],
+          ],
           // // Footnotes mode (default: true)
           // footnotes: true,
           // // GitHub Flavored Markdown mode (default: true)
