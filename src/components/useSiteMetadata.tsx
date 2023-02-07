@@ -10,7 +10,7 @@ const useSiteMetadata = () => {
       site {
         siteMetadata {
           title
-          siteUrl
+          # siteUrl
         }
       }
     }

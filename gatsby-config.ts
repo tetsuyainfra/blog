@@ -26,20 +26,29 @@ const config: GatsbyConfig = {
     // transformer
     //
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Add your gatsby-remark-* plugins here
-        plugins: [],
-        // Enable JS for https://github.com/jonschlinkert/gray-matter#optionsengines (default: false)
-        // It's not advised to set this to "true" and this option will likely be removed in the future
-        // jsFrontmatterEngine: false,
-        //
-        excerpt_separator: `<!-- endexcerpt  -->`,
-      },
+        extensions: [`.md`, `.mdx`], //変更する行
+        mdxOptions: {
+          // remarkPlugins: [
+          //   require(`remark-gfm`),
+          //   // To pass options, use a 2-element array with the
+          //   // configuration in an object in the second element
+          //   // [require(`remark-external-links`), { target: false }],
+          // ],
+          // // Footnotes mode (default: true)
+          // footnotes: true,
+          // // GitHub Flavored Markdown mode (default: true)
+          // gfm: true,
+          // // Add your gatsby-remark-* plugins here
+          // plugins: [],
+          // // Enable JS for https://github.com/jonschlinkert/gray-matter#optionsengines (default: false)
+          // // It's not advised to set this to "true" and this option will likely be removed in the future
+          // // jsFrontmatterEngine: false,
+          // //
+          // excerpt_separator: `<!-- endexcerpt  -->`,
+        }, // mdxOptions
+      }, // options
     },
   ],
 }

@@ -4,11 +4,12 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
+  console.log(data)
   return (
     <Layout pageTitle="My Blog Posts">
       <p>My cool posts will go in here</p>
       <ul>
-        {data.allMarkdownRemark.nodes.map((node: any) => (
+        {data.allMdx.nodes.map((node: any) => (
           <article key={node.id}>
             <h2>{node.frontmatter.title}</h2>
             <p>Posted: {node.frontmatter.date}</p>
@@ -22,7 +23,7 @@ const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
 
 export const query = graphql`
   query BlogPages {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "YYYY-MM-DD")
