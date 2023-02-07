@@ -19,7 +19,7 @@ const BlogPost = ({ data, children }) => {
   return (
     <Layout pageTitle={title}>
       <p>{date}</p>
-      <GatsbyImage
+      {/* <GatsbyImage
         image={image}
         alt={data.mdx.frontmatter.hero_image_alt}
       />
@@ -28,7 +28,7 @@ const BlogPost = ({ data, children }) => {
         <a href={data.mdx.frontmatter.hero_image_credit_url}>
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
-      </p>
+      </p> */}
       <p>{data.tableOfContents}</p>
       {children}
     </Layout>
@@ -44,11 +44,11 @@ export const query = graphql`
         hero_image_alt
         hero_image_credit_url
         hero_image_credit_text
-        hero_image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
+        # hero_image {
+        #   childImageSharp {
+        #     gatsbyImageData
+        #   }
+        # }
       }
       tableOfContents
     }
