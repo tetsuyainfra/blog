@@ -68,6 +68,7 @@ const config: GatsbyConfig = {
         }, // mdxOptions
       }, // options
     },
+    'gatsby-transformer-sharp',
   ],
 }
 

@@ -8,6 +8,10 @@ tag:
   - VampireSurvivors
 topImage: VampireSurvivors_Normal_stage4.png
 slug: vampire-survivor
+hero_image: wolfgang-hasselmann-zTNv5fteUWI-unsplash.jpg
+hero_image_alt: 'A tree on wheat field'
+hero_image_credit_text: 'Wolfgang Hasselmann'
+hero_image_credit_url: https://unsplash.com/photos/zTNv5fteUWI
 ---
 
 ## 今日やったこと
