@@ -6,6 +6,20 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
+      # このリポジトリをチェックアウトしてー
+      - uses: actions/checkout@v3
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        # with:
+        #   path: main
+
+      - name: Checkout tools repo
+        uses: actions/checkout@v3
+        with:
+          repository: tetsuyainfra/tetsuyainfra.github.io
+          path: public2
+
       - name: Print a greeting
         env:
           MY_VAR: Hi there! My name is
@@ -16,3 +30,4 @@ jobs:
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           echo $CHECK_TEST_SECRET
+          ls -la ./
