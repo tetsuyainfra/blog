@@ -1,6 +1,15 @@
 import type { GatsbyConfig } from 'gatsby'
 import remarkGfm from 'remark-gfm'
 
+const wrapESMPlugin = (name: string) =>
+  function wrapESM(opts: any) {
+    return async (...args: any) => {
+      const mod = await import(name)
+      const plugin = mod.default(opts)
+      return plugin(...args)
+    }
+  }
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tetsuyainfra 日々是好日`,
@@ -32,11 +41,14 @@ const config: GatsbyConfig = {
         extensions: [`.md`, `.mdx`], //変更する行
         mdxOptions: {
           remarkPlugins: [
-            // require(`remark-gfm`),
+            require(`remark-gfm`),
+            // wrapESMPlugin(`remark-gfm`),
             // To pass options, use a 2-element array with the
             // configuration in an object in the second element
             // [require(`remark-external-links`), { target: false }],
           ],
+          // rehypePlugins: [wrapESMPlugin(`rehype-slug`)],
+
           // // Footnotes mode (default: true)
           // footnotes: true,
           // // GitHub Flavored Markdown mode (default: true)
