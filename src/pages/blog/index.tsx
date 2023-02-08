@@ -7,7 +7,7 @@ const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
   console.log(data)
   return (
     <Layout pageTitle="My Blog Posts">
-      {data.allMdx.nodes.map((node: any) => (
+      {data.allMarkdownRemark.nodes.map((node: any) => (
         <article key={node.id}>
           <h2>
             <Link to={`/blog/${node.frontmatter.slug}`}>
@@ -24,7 +24,7 @@ const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
 
 export const query = graphql`
   query BlogPages {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "YYYY-MM-DD")
