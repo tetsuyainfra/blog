@@ -1,92 +1,87 @@
 import * as React from 'react'
-import { graphql, PageProps } from 'gatsby'
+import { graphql, Link, PageProps } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { parseISO } from 'date-fns'
+import { format } from 'date-fns-tz'
 import Layout from '../../../components/layout'
 import Seo from '../../../components/seo'
 import useSiteMetadata from '../../../components/useSiteMetadata'
 
-type BlogArchiveIndexProps = {
-  data: PageProps<Queries.BlogPostBySlugQuery>
-  pageContext: {
-    periodStartDate: string
-    periodEndDate: string
-  }
+type PageContext = {
+  periodStartDate: string
+  periodEndDate: string
 }
-const BlogArchiveIndex: React.FC<BlogArchiveIndexProps> = ({
+type Props = PageProps<Queries.GetAllBlogEntryForPeriodQuery, PageContext>
+
+const BlogArchiveIndex = ({
   data,
-  pageContext,
-}) => {
-  return
-  ;<Layout seo={<SEO title="Blog" />}>
-    <ul>
-      {years.map((year, i) => (
-        <div key={i}>
-          {year}年
-          <ul>
-            {Array.from(year_months[year])
-              .sort()
-              .map((month, j) => (
-                <li key={j}>
-                  <Link to={`./${year}/${month}`}>
-                    {Number(month)}月の記事一覧
-                  </Link>
-                </li>
-              ))}
-          </ul>
-        </div>
-      ))}
-    </ul>
-  </Layout>
-}
-const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
-  let { title } = useSiteMetadata()
-  // useStaticQuery()
+  pageContext: { periodEndDate, periodStartDate },
+}: Props) => {
+  // console.log(data)
+  const { nodes: posts } = data.allMarkdownRemark
+
+  function utc2tz(date_string: string) {
+    useSiteMetadata()
+    const utc_date = parseISO(date_string)
+    const s = format(utc_date, 'yyyy/MM/dd HH:mm', { timeZone: 'Asia/Tokyo' })
+    return s
+  }
+  console.log(
+    'start',
+    periodStartDate,
+    parseISO(periodStartDate),
+    utc2tz(periodStartDate)
+  )
+  // console.log(
+  //   'end  ',
+  //   periodEndDate,
+  //   parseISO(periodEndDate),
+  //   utc2tz(periodEndDate)
+  // )
+
   return (
-    <Layout pageTitle={title}>
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          {/* <h1 itemProp="headline">{post.frontmatter.title}</h1> */}
-          {/* <p>{post.frontmatter.date}</p> */}
-        </header>
-        {/* <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        /> */}
-        <hr />
-        <footer>{/* <Bio /> */}</footer>
-      </article>
+    <Layout pageTitle="Blog Archive Index">
+      {periodStartDate} - {periodEndDate}
+      <h2>Monthly</h2>
+      <ul>
+        {posts.map((post) => {
+          return (
+            <li key={post.id}>
+              <Link to={post.fields!.url!}>
+                <span>{utc2tz(post.fields!.date!)}</span>
+                <span>{post.frontmatter?.title}</span>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
     </Layout>
   )
 }
 
 export const Head = () => <Seo title="My Blog Posts" />
+export default BlogArchiveIndex
 
-export default BlogPost
-
-export const GetAllBlogEntryForArchiveQuery = graphql`
-  query GetAllBlogEntryForArchive {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+export const pageQuery = graphql`
+  query GetAllBlogEntryForPeriod($periodStartDate: Date, $periodEndDate: Date) {
+    allMarkdownRemark(
+      filter: {
+        frontmatter: { date: { gte: $periodStartDate, lt: $periodEndDate } }
+      }
+      sort: { fields: { date: ASC } }
+    ) {
       totalCount
-      edges {
-        node {
-          id
-          fields {
-            year
-            month
-            day
-            year_month
-            url
-          }
-          frontmatter {
-            title
-            date
-          }
-          excerpt
+      nodes {
+        id
+        fields {
+          date
+          url
         }
+        frontmatter {
+          title
+          date
+        }
+        excerpt
       }
     }
   }

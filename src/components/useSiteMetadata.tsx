@@ -10,7 +10,25 @@ const useSiteMetadata = () => {
       site {
         siteMetadata {
           title
-          # siteUrl
+          description
+          siteUrl
+          dateFormat
+          timestampFormat
+          timeZone
+          siteSections {
+            title
+            url
+            icon
+          }
+          author {
+            name
+            summary
+          }
+          titleTemplate
+          social {
+            twitter
+            github
+          }
         }
       }
     }

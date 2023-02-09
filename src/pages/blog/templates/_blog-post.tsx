@@ -5,7 +5,11 @@ import Layout from '../../../components/layout'
 import Seo from '../../../components/seo'
 import useSiteMetadata from '../../../components/useSiteMetadata'
 
-const BlogPost = ({ data }: PageProps<Queries.BlogPostByIdQuery>) => {
+import { DeepNonNullable } from 'utility-types'
+
+const BlogPost = ({
+  data,
+}: PageProps<DeepNonNullable<Queries.BlogPostByIdQuery>>) => {
   let { title } = useSiteMetadata()
   // useStaticQuery()
 
@@ -51,8 +55,8 @@ const BlogPost = ({ data }: PageProps<Queries.BlogPostByIdQuery>) => {
           </li>
           <li>
             {next && (
-              <Link to={next.fields.url} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next.fields!.url!} rel="next">
+                {next.frontmatter!.title} →
               </Link>
             )}
           </li>

@@ -15,15 +15,6 @@ const Layout: React.FC<{ pageTitle: string; children: React.ReactNode }> = ({
   pageTitle,
   children,
 }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   return (
     <div className={container}>
       <header className={siteTitle}>{useSiteMetadata().title}</header>

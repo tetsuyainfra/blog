@@ -16,6 +16,7 @@ const {
 import { format, OptionsWithTZ, utcToZonedTime } from 'date-fns-tz'
 
 import config from './gatsby-config'
+import { DeepNonNullable } from 'utility-types'
 // Define the template for blog post
 const blogPost = path.resolve(`./src/pages/blog/templates/_blog-post.tsx`)
 const blogArchive = path.resolve(`./src/pages/blog/templates/_blog-archive.tsx`)
@@ -121,7 +122,9 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }) => {
   const { createPage } = actions
 
-  const queryBlogPages = await graphql<Queries.CreaetBlogPagesQuery>(`
+  const queryBlogPages = await graphql<
+    DeepNonNullable<Queries.CreaetBlogPagesQuery>
+  >(`
     query CreaetBlogPages {
       allMarkdownRemark(sort: { frontmatter: { date: ASC } }) {
         edges {
@@ -149,26 +152,26 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
     // 次のアーカイブURLを作成する
     // blog/archive/[year]/[month]
-    // const start_date = edges[0].node.fields.date
-    // const last_date = edges[edges.length - 1].node.fields.date
-    // const startMonth = startOfMonth(new Date(start_date)) // JST
-    // const nextLastMonth = startOfMonth(addMonths(new Date(last_date), +1)) // JST
-    // let nowMonth = startMonth
-    // while (isBefore(nowMonth, nextLastMonth)) {
-    //   const periodStartDate = nowMonth
-    //   const periodEndDate = addMonths(nowMonth, 1)
-    //   const url_path = `/blog/archive/${format(nowMonth, 'yyyy/MM')}`
-    //   createPage({
-    //     path: url_path,
-    //     component: path.resolve(`./src/pages/blog/_monthlyTemplate.tsx`),
-    //     context: {
-    //       periodStartDate: periodStartDate.toISOString(),
-    //       periodEndDate: periodEndDate.toISOString(),
-    //     },
-    //   })
+    const start_date = edges[0].node.fields.date
+    const last_date = edges[edges.length - 1].node.fields.date
+    const startMonth = startOfMonth(new Date(start_date)) // JST
+    const nextLastMonth = startOfMonth(addMonths(new Date(last_date), +1)) // JST
+    let nowMonth = startMonth
+    while (isBefore(nowMonth, nextLastMonth)) {
+      const periodStartDate = nowMonth
+      const periodEndDate = addMonths(nowMonth, 1)
+      const url_path = `/blog/archive/${format(nowMonth, 'yyyy/MM')}`
+      createPage({
+        path: url_path,
+        component: blogArchive,
+        context: {
+          periodStartDate: periodStartDate.toISOString(),
+          periodEndDate: periodEndDate.toISOString(),
+        },
+      })
 
-    //   nowMonth = addMonths(nowMonth, +1)
-    // }
+      nowMonth = addMonths(nowMonth, +1)
+    }
 
     // 次の本文記事URLを作成する
     // /blog/[year]/[month]/[day]/[slug}

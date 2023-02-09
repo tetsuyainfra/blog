@@ -13,10 +13,21 @@ const wrapESMPlugin = (name: string) =>
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `tetsuyainfra 日々是好日`,
+    description: 'tetsuyainfraの隠れ家',
     siteUrl: `https://tetsuyainfra.github.io/`,
     dateFormat: 'yyyy/MM/dd',
     timestampFormat: 'yyyy-MM-dd HH:mm',
     timeZone: 'Asia/Tokyo',
+    // -- additional
+    titleTemplate: '%s | tetsuyainfra.github.io',
+    author: {
+      name: `tetsuyainfra`,
+      summary: `live in japan`,
+    },
+    social: {
+      twitter: `tetsuyainfra`,
+      github: `tetsuyainfra`,
+    },
     siteSections: [
       {
         title: 'Blog',
