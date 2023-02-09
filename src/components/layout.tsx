@@ -11,7 +11,7 @@ import gStyles, {
 } from './layout.module.css'
 import useSiteMetadata from './useSiteMetadata'
 
-const Layout: React.FC<{ pageTitle: String; children: React.ReactNode }> = ({
+const Layout: React.FC<{ pageTitle: string; children: React.ReactNode }> = ({
   pageTitle,
   children,
 }) => {

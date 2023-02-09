@@ -17,6 +17,28 @@ const config: GatsbyConfig = {
     dateFormat: 'yyyy/MM/dd',
     timestampFormat: 'yyyy-MM-dd HH:mm',
     timeZone: 'Asia/Tokyo',
+    siteSections: [
+      {
+        title: 'Blog',
+        url: '/blog',
+        icon: 'MenuBookOutlined',
+      },
+      {
+        title: 'Post',
+        url: '/post',
+        icon: 'NoteOutlined',
+      },
+      {
+        title: 'Link',
+        url: '/link',
+        icon: 'CloudOutlined',
+      },
+      {
+        title: 'About',
+        url: '/about',
+        icon: 'InfoOutlined',
+      },
+    ],
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

@@ -3,7 +3,7 @@ title: VampireSurvivor追加攻略
 date: 2022-04-10 01:36:16+09:00
 category: Diary
 author: tetsuyainfra
-tags:
+tag:
   - Game
   - VampireSurvivors
 topImage: VampireSurvivors_Normal_stage4.png

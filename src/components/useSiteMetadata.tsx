@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { DeepNonNullable } from 'utility-types'
 
 const useSiteMetadata = () => {
-  const data = useStaticQuery<
-    DeepNonNullable<Queries.useSiteMetadataQuery>
-  >(graphql`
+  type TypeOfUseSiteMetadata = DeepNonNullable<Queries.useSiteMetadataQuery>
+
+  const data = useStaticQuery<TypeOfUseSiteMetadata>(graphql`
     query useSiteMetadata {
       site {
         siteMetadata {
