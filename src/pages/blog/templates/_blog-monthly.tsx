@@ -58,7 +58,7 @@ const BlogArchiveMonthlyIndex = ({
           return (
             <li key={post.id}>
               <Link to={post.fields!.url!}>
-                <span>{utc2tz(post.fields!.date!)}</span>{' '}
+                <span>{utc2tz(post.fields!.local_date!)}</span>{' '}
                 <span>{post.frontmatter?.title}</span>
               </Link>
             </li>
@@ -78,7 +78,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { date: { gte: $periodStartDate, lt: $periodEndDate } }
       }
-      sort: { fields: { date: ASC } }
+      sort: { frontmatter: { date: ASC } }
     ) {
       totalCount
       nodes {
@@ -86,7 +86,7 @@ export const pageQuery = graphql`
         fields {
           year
           month
-          date
+          local_date
           url
         }
         frontmatter {

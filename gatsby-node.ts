@@ -13,10 +13,16 @@ const {
   getMonth,
   getYear,
 } = require('date-fns')
-import { format, OptionsWithTZ, utcToZonedTime } from 'date-fns-tz'
+import {
+  format,
+  OptionsWithTZ,
+  utcToZonedTime,
+  zonedTimeToUtc,
+} from 'date-fns-tz'
 
 import config from './gatsby-config'
 import { DeepNonNullable } from 'utility-types'
+import { time } from 'console'
 // Define the template for blog post
 const blogPost = path.resolve(`./src/pages/blog/templates/_blog-post.tsx`)
 const blogMonthly = path.resolve(`./src/pages/blog/templates/_blog-monthly.tsx`)
@@ -25,7 +31,8 @@ const blogMonthly = path.resolve(`./src/pages/blog/templates/_blog-monthly.tsx`)
 // 変数定義
 //------------------------------------------------------------------------------
 const POST_FIELDS = [
-  'date',
+  'utc_date',
+  'local_date',
   'year',
   'month',
   'day',
@@ -62,18 +69,21 @@ function getSlugParams(node: any) {
     _slug = String(title)
   }
 
-  const timeZone: OptionsWithTZ = {
-    timeZone: config.siteMetadata!.timeZone as string,
-  }
-  const local_date = new Date(date)
-  const year = format(local_date, 'yyyy', timeZone)
-  const month = format(local_date, 'MM', timeZone)
-  const day = format(local_date, 'dd', timeZone)
-  const year_month = format(local_date, 'yyyy/MM', timeZone)
+  const timeZone = config.siteMetadata!.timeZone as string
+  const timeZoneOpt = { timeZone }
+  // const local_date = new Date(date)
+  const date_as_utc = parseISO(date)
+  // const zoned_date = zonedTimeToUtc(local_date)
+  const local_date = zonedTimeToUtc(date_as_utc, timeZone)
+  const year = format(local_date, 'yyyy', timeZoneOpt)
+  const month = format(local_date, 'MM', timeZoneOpt)
+  const day = format(local_date, 'dd', timeZoneOpt)
+  const year_month = format(local_date, 'yyyy/MM', timeZoneOpt)
 
   // console.log({ year, month, day, _slug, })
   return {
-    date: local_date,
+    utc_date: date_as_utc,
+    local_date: format(local_date, 'yyyy-MM-dd HH:mm:ssXXX', timeZoneOpt),
     year,
     month,
     day,
@@ -92,7 +102,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   actions,
   reporter,
 }) => {
-  console.log(`Node created of type "${node.internal.type}"`)
+  // console.log(`Node created of type "${node.internal.type}"`)
   const { createNodeField } = actions
 
   // if(node.internal.mediaType === `text/yaml`){
@@ -131,7 +141,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
           node {
             id
             fields {
-              date
+              local_date
               year
               month
               day
@@ -141,6 +151,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
             }
             frontmatter {
               title
+              date
             }
           }
         }
@@ -152,10 +163,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
     // 次のアーカイブURLを作成する
     // blog/archive/[year]/[month]
-    const start_date = edges[0].node.fields.date
-    const last_date = edges[edges.length - 1].node.fields.date
-    const startMonth = startOfMonth(new Date(start_date)) // JST
-    const nextLastMonth = startOfMonth(addMonths(new Date(last_date), +1)) // JST
+    // const utc_date = edges[0].node.frontmatter.date
+    // const local_date = edges[0].node.fields.local_date
+    // console.log(utc_date, local_date)
+    const start_date = edges[0].node.fields.local_date
+    const last_date = edges[edges.length - 1].node.fields.local_date
+    // 中身はJSTだけどUTCをそのまま使う
+    const startMonth = startOfMonth(new Date(start_date))
+    const nextLastMonth = startOfMonth(addMonths(new Date(last_date), +1))
     let nowMonth = startMonth
     while (isBefore(nowMonth, nextLastMonth)) {
       const periodStartDate = nowMonth

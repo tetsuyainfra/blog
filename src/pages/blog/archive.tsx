@@ -82,7 +82,7 @@ export default BlogArchiveIndex
 
 export const pageQuery = graphql`
   query GetAllBlogEntry {
-    allMarkdownRemark(sort: { fields: { date: ASC } }) {
+    allMarkdownRemark(sort: { frontmatter: { date: ASC } }) {
       totalCount
       nodes {
         id
@@ -91,7 +91,7 @@ export const pageQuery = graphql`
           month
           day
           year_month
-          date
+          local_date
           url
         }
         frontmatter {
