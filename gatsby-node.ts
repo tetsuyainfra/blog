@@ -19,7 +19,7 @@ import config from './gatsby-config'
 import { DeepNonNullable } from 'utility-types'
 // Define the template for blog post
 const blogPost = path.resolve(`./src/pages/blog/templates/_blog-post.tsx`)
-const blogArchive = path.resolve(`./src/pages/blog/templates/_blog-archive.tsx`)
+const blogMonthly = path.resolve(`./src/pages/blog/templates/_blog-monthly.tsx`)
 
 //------------------------------------------------------------------------------
 // 変数定義
@@ -163,7 +163,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
       const url_path = `/blog/archive/${format(nowMonth, 'yyyy/MM')}`
       createPage({
         path: url_path,
-        component: blogArchive,
+        component: blogMonthly,
         context: {
           periodStartDate: periodStartDate.toISOString(),
           periodEndDate: periodEndDate.toISOString(),

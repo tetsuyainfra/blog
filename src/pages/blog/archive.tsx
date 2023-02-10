@@ -6,9 +6,9 @@ import { graphql, Link, PageProps } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { parseISO } from 'date-fns'
 import { format } from 'date-fns-tz'
-import Layout from '../../../components/layout'
-import Seo from '../../../components/seo'
-import useSiteMetadata from '../../../components/useSiteMetadata'
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
+import useSiteMetadata from '../../components/useSiteMetadata'
 
 type Props = PageProps<Queries.GetAllBlogEntryQuery>
 
@@ -28,9 +28,8 @@ const BlogArchiveIndex = ({ data }: Props) => {
     const month = post?.fields?.month as string
     if (!year_months[year]) {
       year_months[year] = new Set<string>()
-    } else {
-      year_months[year].add(month)
     }
+    year_months[year].add(month)
   })
 
   function utc2tz(date_string: string) {
@@ -62,7 +61,7 @@ const BlogArchiveIndex = ({ data }: Props) => {
           </li>
         ))}
       </ul>
-      <ul>
+      {/* <ul>
         {posts.map((post) => {
           return (
             <li key={post.id}>
@@ -73,7 +72,7 @@ const BlogArchiveIndex = ({ data }: Props) => {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
     </Layout>
   )
 }
