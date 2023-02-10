@@ -1,0 +1,54 @@
+---
+weight: 14
+category: tech-speak
+list:
+  - name: Speaker Deck - Share Presentations without the Mess
+    url: https://speakerdeck.com/
+  - name: Share and Discover Knowledge on LinkedIn SlideShare
+    url: https://www.slideshare.net/
+
+  - name: connpass
+    url: https://connpass.com/
+  - name: TECH PLAY
+    url: https://techplay.jp/
+  - name: Doorkeeper
+    url: https://www.doorkeeper.jp/
+  - name: ATND
+    url: https://atnd.org/
+
+  - name: HTML5 Conference
+    url: https://events.html5j.org/conference/2018/11/
+
+  - name: OSPN - We Are Open!!
+    url: https://www.ospn.jp/
+
+  - name: 技術書典 | 技術書典
+    url: https://techbookfest.org/
+
+  - name: RubyKaigi
+    url: https://rubykaigi.org/
+
+  - name: Go Conference
+    url: https://gocon.jp/
+
+  - name: PHP Conference
+    url: https://phpcon.php.gr.jp/
+
+  - name: JAWS-UG（AWS Users Group – Japan）
+    url: https://jaws-ug.jp/
+
+  - name: CODE BLUE
+    url: https://codeblue.jp/
+
+  - name: DroidKaigi 2019
+    url: https://droidkaigi.jp/2019/
+
+  - name: JSUG -JAPAN SAP USERS' GROUP-
+    url: http://www.jsug.org/
+
+
+  - name: 日本Javaユーザーグループ
+    url: http://www.java-users.jp/
+
+  - name: VimConf
+    url: https://vimconf.org/

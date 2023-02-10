@@ -1,0 +1,12 @@
+---
+weight: 3
+category:  crypt
+list:
+- name: BTC to USD
+  url: https://www.google.com/finance/quote/BTC-USD
+- name: ETH to USDj0
+  url: https://www.google.com/finance/quote/ETH-USD
+- name: 日本でのマイニングについて情報徹底公開！
+  url: https://note.com/cryptomining
+
+

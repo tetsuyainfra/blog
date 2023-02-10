@@ -1,0 +1,20 @@
+---
+weight: 10
+category: tech-news
+list:
+  - name: はてなブックマーク - 人気エントリー - テクノロジー
+    url: https://b.hatena.ne.jp/hotentry/it
+  - name: なれのはてブ
+    url: https://narenohatebu.jp/hotentry_it.html
+  - name: ITエキスパートのための問題解決メディア - ＠IT
+    url: https://www.atmarkit.co.jp/
+  - name: IT総合情報ポータル「ITmedia」Home
+    url: https://www.itmedia.co.jp/
+  - name: CNET Japan
+    url: https://japan.cnet.com/
+  - name: Menthas
+    url: https://menthas.com/
+  - name: Publickey － Enterprise IT × Cloud Computing × Web Technology / Blog
+    url: https://www.publickey1.jp/
+  - name: kledgeb
+    url: https://kledgeb.blogspot.com/

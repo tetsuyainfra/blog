@@ -1,0 +1,14 @@
+---
+weight: 70
+category:  news
+list:
+- name: MSN
+  url: https://www.msn.com/ja-jp/news
+- name: Yahoo
+  url: http://news.yahoo.co.jp/
+- name: livedoor
+  url: https://news.livedoor.com/
+- name: 朝日
+  url: https://www.asahi.com/news/
+- name: 読売
+  url: https://www.yomiuri.co.jp/news/

@@ -1,0 +1,16 @@
+---
+weight: 1
+category:  fav
+list:
+- name: hackernews
+  url:  https://news.ycombinator.com/news
+- name: TechFeed
+  url:  https://techfeed.io/categories/all
+- name: スラド
+  url:  https://srad.jp/
+- name: Qiita
+  url:  https://qiita.com/
+- name: dev.to
+  url:  https://dev.to/
+- name: Youtube
+  url:  https://www.youtube.com/

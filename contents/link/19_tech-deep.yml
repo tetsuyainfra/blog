@@ -1,0 +1,21 @@
+---
+weight: 19
+category:  tech-deep
+list:
+  - name: The Linux Kernel
+    url: https://linuxjf.osdn.jp/JFdocs/The-Linux-Kernel.html
+
+  - name: Linuxデバイスドライバ開発入門
+    url: http://linux-dvr.biz/
+
+  - name: ネットワークエンジニアとして
+    url: https://www.infraexpert.com/
+
+  - name: UNIX & Linux コマンド・シェルスクリプト リファレンス
+    url: https://shellscript.sunone.me/
+
+  - name: VIM Adventures
+    url: https://vim-adventures.com/
+
+  - name: Google Scholar
+    url: https://scholar.google.co.jp/

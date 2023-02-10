@@ -1,0 +1,8 @@
+---
+weight: 20
+category:  Prog-trend
+list:
+  - name: The Ruby Toolbox
+    url: https://www.ruby-toolbox.com/
+  - name: Trending repositories on GitHub today · GitHub
+    url: https://github.com/trending/

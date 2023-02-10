@@ -1,0 +1,40 @@
+---
+weight: 12
+category:  tech-corp
+list:
+  - name: Google Developers Japan
+    url: https://developers-jp.googleblog.com/
+
+  - name: クックパッド開発者ブログ
+    url: https://techlife.cookpad.com/
+
+  - name: クラスメソッド発「やってみた」系技術メディア | Developers.IO
+    url: https://dev.classmethod.jp/
+
+  - name: TechRacho - RoR
+    url: https://techracho.bpsinc.jp/
+
+  - name: はてなブログ開発ブログ
+    url: https://staff.hatenablog.com/
+
+  - name: Cybozu Inside Out | サイボウズエンジニアのブログ
+    url: https://blog.cybozu.io/
+
+  - name: LINE ENGINEERING BLOG
+    url: https://engineering.linecorp.com/ja/blog/
+
+  - name: 株式会社創夢 — SOUM/misc
+    url: https://www.soum.co.jp/misc/
+
+  - name: Yahoo! JAPAN Tech Blog
+    url: https://techblog.yahoo.co.jp/
+
+  - name: Mercari Engineering Blog
+    url: https://tech.mercari.com/
+
+  - name: WebNAUT | デザイン制作会社ビーワークスの情報メディア
+    url: https://webnaut.jp/
+
+  - name: バズ部
+    url: https://bazubu.com/
+
