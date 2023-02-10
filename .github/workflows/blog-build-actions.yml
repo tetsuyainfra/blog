@@ -8,13 +8,20 @@ jobs:
       # このリポジトリをチェックアウトしてー
       - uses: actions/checkout@v3
 
+      - name: configure SSH Keys
+        env:
+          TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p $HOME/.ssh/
+          echo -e "$TOKEN" > $HOME/.ssh/id_ed25519
+          chmod 600 $HOME/.ssh/id_ed25519
+
       # push先もチェックアウトしてー
-      - name: Checkout tools repo
+      - name: Checkout github.io repo
         uses: actions/checkout@v3
         with:
           repository: tetsuyainfra/tetsuyainfra.github.io
           path: public
-          ssh-key: ${{ secrets.SSH_PRIV_KEY }}
 
       # Node.jsをセットアップ
       - uses: actions/setup-node@v3
