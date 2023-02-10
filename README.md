@@ -23,6 +23,16 @@ $ act
 
 ## MEMO
 
+### Semantic Commit Messages
+
+https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+Format: <type>(<scope>): <subject>
+例
+
+- `style: add bootstraps@3`
+- `style ☺: add bootstraps@3`
+- `style: add bootstraps@3 #133`
+
 ### package.json dependencies
 
 ### package.json devDependencies
