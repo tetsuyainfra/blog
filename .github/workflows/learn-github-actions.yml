@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: tetsuyainfra/tetsuyainfra.github.io
-          path: public2
+          path: public
           ssh-key: ${{ secrets.SSH_PRIV_KEY }}
 
       # Node.jsをセットアップ
@@ -58,8 +58,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      # COMMIT
-      - run: |
+      - name: Github Pages Deploy
+        run: |
           cd public
           date > generated.txt
           git config user.name github-actions
