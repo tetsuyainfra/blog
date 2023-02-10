@@ -1,0 +1,23 @@
+name: Testing environment
+run-name: ${{ github.actor }} is testing
+on: [push]
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      # このリポジトリをチェックアウトしてー
+      - uses: actions/checkout@v3
+
+      #
+      - name: Print a greeting
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+          # MY_ENV_VAR: ${{ env.MY_ENV_VAR }}
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+          echo ${{ env.MY_ENV_VAR }}
+          echo ${{ runner.name }}
