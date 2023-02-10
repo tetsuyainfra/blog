@@ -21,3 +21,11 @@ jobs:
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           echo ${{ env.MY_ENV_VAR }}
           echo ${{ runner.name }}
+          echo event_name: ${{ github.event_name }}
+          echo job_workflow_sha: ${{ github.job_workflow_sha }}
+          echo commit message: ${{ github.event.head_commit.message }}
+
+      - name: If on Github, print
+        if: ${{ github }}
+        run: |
+          echo "I'm Github"
