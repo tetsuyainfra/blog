@@ -59,8 +59,11 @@ jobs:
         run: npm run build
 
       - name: Github Pages Deploy
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           cd public
+          ls /home/runner/work/_temp
           date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
