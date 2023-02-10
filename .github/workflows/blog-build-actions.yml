@@ -41,7 +41,6 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            public
             .cache
           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
           restore-keys: |
@@ -63,7 +62,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           cd public
-          ls /home/runner/work/_temp
+          ls -la /home/runner/work/_temp
           date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
