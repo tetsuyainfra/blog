@@ -8,14 +8,6 @@ jobs:
       # このリポジトリをチェックアウトしてー
       - uses: actions/checkout@v3
 
-      # - name: configure SSH Keys
-      #   env:
-      #     TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
-      #   run: |
-      #     mkdir -p $HOME/.ssh/
-      #     echo -e "$TOKEN" > $HOME/.ssh/id_ed25519
-      #     chmod 600 $HOME/.ssh/id_ed25519
-
       # push先もチェックアウトしてー
       - name: Checkout github.io repo
         uses: actions/checkout@v3
@@ -74,5 +66,5 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "generated"
-          echo "Will Pushing"
+          echo "Will Push"
           git push
