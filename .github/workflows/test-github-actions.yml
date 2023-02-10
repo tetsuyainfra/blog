@@ -1,4 +1,4 @@
-name: Greeting from Mona
+name: other repository checkout test
 run-name: ${{ github.actor }} is Greeting from Mona
 on: [push]
 jobs:
@@ -20,7 +20,7 @@ jobs:
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           echo $CHECK_TEST_SECRET
-          echo $CHECK_TEST_SECRET | grep testingX
+          # echo $CHECK_TEST_SECRET | grep testingX
           # echo $CHECK_TEST_SECRET | grep testingX1
           ls -la ./
           # ls -la ./public
