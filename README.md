@@ -2,6 +2,25 @@
 
 for tetsuyainfra.github.io
 
+## RUN
+
+```shell
+$ npm install
+$ npm start
+# SEE localhost:8000 by web browser
+
+# build
+$ npm run build
+#  or
+$ gatsby build
+```
+
+## RUN(test Github Actions)
+
+```shell
+$ act
+```
+
 ## MEMO
 
 ### package.json dependencies
