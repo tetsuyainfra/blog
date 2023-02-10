@@ -9,17 +9,7 @@ jobs:
       # このリポジトリをチェックアウトしてー
       - uses: actions/checkout@v3
 
-      - name: Checkout
-        uses: actions/checkout@v3
-        # with:
-        #   path: main
-
-      - name: Checkout tools repo
-        uses: actions/checkout@v3
-        with:
-          repository: tetsuyainfra/tetsuyainfra.github.io
-          path: public2
-
+      #
       - name: Print a greeting
         env:
           MY_VAR: Hi there! My name is
@@ -30,8 +20,33 @@ jobs:
         run: |
           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
           echo $CHECK_TEST_SECRET
+          echo $CHECK_TEST_SECRET | grep testingX
+          # echo $CHECK_TEST_SECRET | grep testingX1
           ls -la ./
-          ls -la ./public2
+          # ls -la ./public
           echo "test
                 BBBBBB hohohohohohoho
           "
+
+
+      # - name: Checkout
+      #   uses: actions/checkout@v3
+      #   with:
+      #     path: main
+
+      - name: Checkout tools repo
+        uses: actions/checkout@v3
+        with:
+          repository: tetsuyainfra/tetsuyainfra.github.io
+          path: public2
+          ssh-key: ${{ secrets.SSH_PRIV_KEY }}
+
+
+      # COMMIT
+      # - run: |
+      #     date > generated.txt
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+      #     git add .
+      #     git commit -m "generated"
+      #     git push

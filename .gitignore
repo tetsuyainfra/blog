@@ -1,3 +1,6 @@
+# act files
+.secrets
+
 # project files
 .cache/
 public
