@@ -19,10 +19,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^2.2.1",
+    "@mui/material": "^5.11.8",
     "date-fns": "^2.29.3",
     "date-fns-tz": "^2.0.0",
     "gatsby": "^5.5.0",
+    "gatsby-plugin-emotion": "^8.6.0",
     "gatsby-plugin-feed": "^5.6.0",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-manifest": "^5.6.0",
