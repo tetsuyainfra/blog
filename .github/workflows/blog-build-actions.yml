@@ -8,13 +8,13 @@ jobs:
       # このリポジトリをチェックアウトしてー
       - uses: actions/checkout@v3
 
-      - name: configure SSH Keys
-        env:
-          TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          mkdir -p $HOME/.ssh/
-          echo -e "$TOKEN" > $HOME/.ssh/id_ed25519
-          chmod 600 $HOME/.ssh/id_ed25519
+      # - name: configure SSH Keys
+      #   env:
+      #     TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
+      #   run: |
+      #     mkdir -p $HOME/.ssh/
+      #     echo -e "$TOKEN" > $HOME/.ssh/id_ed25519
+      #     chmod 600 $HOME/.ssh/id_ed25519
 
       # push先もチェックアウトしてー
       - name: Checkout github.io repo
@@ -22,6 +22,7 @@ jobs:
         with:
           repository: tetsuyainfra/tetsuyainfra.github.io
           path: public
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       # Node.jsをセットアップ
       - uses: actions/setup-node@v3
@@ -73,4 +74,5 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "generated"
+          echo "Will Pushing"
           git push
