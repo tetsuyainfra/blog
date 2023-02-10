@@ -28,12 +28,6 @@ jobs:
                 BBBBBB hohohohohohoho
           "
 
-
-      # - name: Checkout
-      #   uses: actions/checkout@v3
-      #   with:
-      #     path: main
-
       - name: Checkout tools repo
         uses: actions/checkout@v3
         with:

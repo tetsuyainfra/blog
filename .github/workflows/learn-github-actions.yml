@@ -1,12 +1,20 @@
 name: blog-build-actions
 run-name: ${{ github.actor }} is building on GitHub Actions
-# on: [push]
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       # このリポジトリをチェックアウトしてー
       - uses: actions/checkout@v3
+
+      # push先もチェックアウトしてー
+      - name: Checkout tools repo
+        uses: actions/checkout@v3
+        with:
+          repository: tetsuyainfra/tetsuyainfra.github.io
+          path: public2
+          ssh-key: ${{ secrets.SSH_PRIV_KEY }}
 
       # Node.jsをセットアップ
       - uses: actions/setup-node@v3
@@ -27,6 +35,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Caching Gatsby
         id: gatsby-cache-build
         uses: actions/cache@v3
@@ -38,7 +47,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
 
-
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         name: List the state of node modules
         continue-on-error: true
@@ -49,3 +57,13 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      # COMMIT
+      - run: |
+          cd public
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
