@@ -19,7 +19,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^2.2.1",
     "@mui/material": "^5.11.8",

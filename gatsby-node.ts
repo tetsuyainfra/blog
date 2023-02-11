@@ -1,7 +1,11 @@
+const fs = require('fs')
+const path = require(`path`)
+const os = require(`os`)
+
+const urlSlug = require(`url-slug`)
+
 import type { GatsbyNode } from 'gatsby'
 
-const path = require(`path`)
-const urlSlug = require(`url-slug`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const {
   formatISO,
@@ -211,57 +215,73 @@ export const createPages: GatsbyNode['createPages'] = async ({
   return queryBlogPages
 }
 
-/*
-const createPages: GatsbyNode['createPages'] = async ({
-  graphql,
-  actions,
-  reporter,
+//------------------------------------------------------------------------------------------
+// PluginOptionSchema
+//------------------------------------------------------------------------------------------
+export const pluginOptionsSchema: GatsbyNode['pluginOptionsSchema'] = ({
+  Joi,
 }) => {
-  const { createPage } = actions
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(`
-    {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
-        nodes {
-          id
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `)
-
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    )
-    return
-  }
-
-  const posts = result.data.allMarkdownRemark.nodes
-
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
-
-      createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      })
-    })
-  }
+  return Joi.object({
+    pathToEmotionCacheProps: Joi.string()
+      .default(``)
+      .description(
+        `The path to the emotion cache props (See https://emotion.sh/docs/@emotion/cache#createcache).`
+      ),
+  })
 }
-export { createPages }
-*/
+
+//------------------------------------------------------------------------------------------
+// PreBootstrap
+//------------------------------------------------------------------------------------------
+// export const onPreBootstrap: GatsbyNode['onPreBootstrap'] = (
+//   { store, cache },
+//   pluginOptions
+// ) => {
+//   const program = store.getState().program
+
+//   let module
+//   if (pluginOptions.pathToEmotionCacheProps) {
+//     module = `module.exports = require("${
+//       path.isAbsolute(pluginOptions.pathToEmotionCacheProps)
+//         ? pluginOptions.pathToEmotionCacheProps
+//         : path.join(program.directory, pluginOptions.pathToEmotionCacheProps)
+//     }")`
+//     if (os.platform() === `win32`) {
+//       module = module.split(`\\`).join(`\\\\`)
+//     }
+//   } else {
+//     module = `module.exports = null`
+//   }
+
+//   const dir = cache.directory
+
+//   if (!fs.existsSync(dir)) {
+//     fs.mkdirSync(dir)
+//   }
+
+//   fs.writeFileSync(path.join(dir, `emotion-cache-props.js`), module)
+// }
+
+//------------------------------------------------------------------------------------------
+//
+//------------------------------------------------------------------------------------------
+// export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+//   actions,
+//   cache,
+// }) => {
+//   const cacheFile = path.join(cache.directory, `emotion-cache-props.js`)
+//   // console.log('cacheFile: ', cacheFile)
+
+//   const { setWebpackConfig } = actions
+//   setWebpackConfig({
+//     resolve: {
+//       alias: {
+//         'material-ui-plugin-cache-endpoint': cacheFile,
+//       },
+//     },
+//   })
+// }
+
+// 参考
+// - gatsby-plugin-material-ui
+//   https://github.com/hupe1980/gatsby-plugin-material-ui/

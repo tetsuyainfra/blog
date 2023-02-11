@@ -106,3 +106,7 @@ https://prettier.io/docs/en/ignore.html
   {{/my-crazy-component}}
 </div>
 ```
+
+### 参考
+
+- https://dev.to/deckstar/gatsby-js-how-to-solve-fouc-when-using-tss-react-and-material-ui-v5-465f
