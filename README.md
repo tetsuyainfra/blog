@@ -109,4 +109,5 @@ https://prettier.io/docs/en/ignore.html
 
 ### 参考
 
+- https://emotion.sh/docs/ssr#gatsby
 - https://dev.to/deckstar/gatsby-js-how-to-solve-fouc-when-using-tss-react-and-material-ui-v5-465f

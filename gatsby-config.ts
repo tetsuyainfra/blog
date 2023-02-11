@@ -61,6 +61,7 @@ const config: GatsbyConfig = {
     //
     'gatsby-plugin-image',
     `gatsby-plugin-emotion`,
+    `gatsby-theme-material-ui`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

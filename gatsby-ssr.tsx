@@ -1,13 +1,14 @@
 import React from 'react'
-import { renderToString } from 'react-dom/server'
-
-import { CacheProvider } from '@emotion/react'
-import createEmotionServer from '@emotion/server/create-instance'
-
-import { makeMuiCache } from './src/theme/cache'
-
 import { GatsbySSR } from 'gatsby'
 
+import { CacheProvider } from '@emotion/react'
+import { createMyCache } from './create-emotion-cache'
+
+/*
+// import { renderToString } from 'react-dom/server'
+// import createEmotionServer from '@emotion/server/create-instance'
+
+// import { makeMuiCache } from './src/theme/cache'
 export const replaceRenderer: GatsbySSR['replaceRenderer'] = (
   args,
   options
@@ -47,3 +48,8 @@ export const replaceRenderer: GatsbySSR['replaceRenderer'] = (
   // render the result from `extractCritical`
   replaceBodyHTMLString(emotionStyles.html)
 }
+*/
+
+// export const wrapRootElement: GatsbySSR['wrapPageElement'] = ({ element }) => (
+//   <CacheProvider value={createMyCache()}>{element}</CacheProvider>
+// )
