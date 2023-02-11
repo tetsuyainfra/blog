@@ -45,7 +45,7 @@ const BlogArchiveMonthlyIndex = ({
   // console.log('zonedDate', zonedDate)
   const year = zonedDate.getFullYear()
   const month = zonedDate.getMonth() + 1 // 0から始まる
-  console.log(year, month)
+  // console.log(year, month)
 
   return (
     <Layout pageTitle="Blog Archive Index">

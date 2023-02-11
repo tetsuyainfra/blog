@@ -7,7 +7,7 @@ import { format } from 'date-fns-tz'
 import { parseISO } from 'date-fns'
 
 const BlogPage = ({ data }: PageProps<Queries.BlogPagesQuery>) => {
-  console.log(data)
+  // console.log(data)
   const { timestampFormat, timeZone } = useSiteMetadata()
 
   return (
