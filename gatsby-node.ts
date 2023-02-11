@@ -10,7 +10,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const {
   formatISO,
   parseISO,
-  startOfMonth,
+  startOfMonthbrowser,
   endOfMonth,
   addMonths,
   isBefore,
@@ -26,7 +26,7 @@ import {
 
 import config from './gatsby-config'
 import { DeepNonNullable } from 'utility-types'
-import { time } from 'console'
+import { startOfMonth } from 'date-fns'
 // Define the template for blog post
 const blogPost = path.resolve(`./src/pages/blog/templates/_blog-post.tsx`)
 const blogMonthly = path.resolve(`./src/pages/blog/templates/_blog-monthly.tsx`)
@@ -229,58 +229,6 @@ export const pluginOptionsSchema: GatsbyNode['pluginOptionsSchema'] = ({
       ),
   })
 }
-
-//------------------------------------------------------------------------------------------
-// PreBootstrap
-//------------------------------------------------------------------------------------------
-// export const onPreBootstrap: GatsbyNode['onPreBootstrap'] = (
-//   { store, cache },
-//   pluginOptions
-// ) => {
-//   const program = store.getState().program
-
-//   let module
-//   if (pluginOptions.pathToEmotionCacheProps) {
-//     module = `module.exports = require("${
-//       path.isAbsolute(pluginOptions.pathToEmotionCacheProps)
-//         ? pluginOptions.pathToEmotionCacheProps
-//         : path.join(program.directory, pluginOptions.pathToEmotionCacheProps)
-//     }")`
-//     if (os.platform() === `win32`) {
-//       module = module.split(`\\`).join(`\\\\`)
-//     }
-//   } else {
-//     module = `module.exports = null`
-//   }
-
-//   const dir = cache.directory
-
-//   if (!fs.existsSync(dir)) {
-//     fs.mkdirSync(dir)
-//   }
-
-//   fs.writeFileSync(path.join(dir, `emotion-cache-props.js`), module)
-// }
-
-//------------------------------------------------------------------------------------------
-//
-//------------------------------------------------------------------------------------------
-// export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
-//   actions,
-//   cache,
-// }) => {
-//   const cacheFile = path.join(cache.directory, `emotion-cache-props.js`)
-//   // console.log('cacheFile: ', cacheFile)
-
-//   const { setWebpackConfig } = actions
-//   setWebpackConfig({
-//     resolve: {
-//       alias: {
-//         'material-ui-plugin-cache-endpoint': cacheFile,
-//       },
-//     },
-//   })
-// }
 
 // 参考
 // - gatsby-plugin-material-ui

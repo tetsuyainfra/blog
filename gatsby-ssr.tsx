@@ -8,9 +8,15 @@ import { makeMuiCache } from './src/theme/cache'
 
 import { GatsbySSR } from 'gatsby'
 
-const replaceRenderer: GatsbySSR['replaceRenderer'] = (args) => {
+export const replaceRenderer: GatsbySSR['replaceRenderer'] = (
+  args,
+  options
+) => {
   const { bodyComponent, replaceBodyHTMLString, setHeadComponents } = args
 
+  //
+  // MUI(emotion)のキャッシュ
+  //
   const muiCache = makeMuiCache()
   const { extractCriticalToChunks } = createEmotionServer(muiCache)
 
@@ -31,7 +37,11 @@ const replaceRenderer: GatsbySSR['replaceRenderer'] = (args) => {
     )
   })
 
-  const combinedStyleTags = [...muiStyleTags]
+  const combinedStyleTags = [
+    // typographyPreconnect,
+    // ...typographyFontTags,
+    ...muiStyleTags,
+  ]
   setHeadComponents(combinedStyleTags)
 
   // render the result from `extractCritical`

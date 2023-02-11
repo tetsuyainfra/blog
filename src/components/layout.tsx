@@ -4,6 +4,8 @@ import { css, Global } from '@emotion/react'
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
+import Header from './Header'
+
 import gStyles, {
   container,
   heading,
@@ -26,19 +28,7 @@ const Layout: React.FC<{ pageTitle: string; children: React.ReactNode }> = ({
 }) => {
   return (
     <Wrapper>
-      {/* <Global
-        styles={css`
-          div {
-            background: red;
-            color: white;
-          }
-        `}
-      /> */}
-      <AppBar position="static">
-        <Toolbar>
-          <Typography>TEST</Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
       <div className={container}>
         <header className={siteTitle}>{useSiteMetadata().title}</header>
         <nav>

@@ -17,7 +17,7 @@ const BlogPost = ({
   // const { site, markdownRemark: post } = data
   const { site, next, previous, markdownRemark: post } = data
 
-  console.log(next, previous)
+  // console.log(next, previous)
   return (
     <Layout pageTitle={title}>
       <article
