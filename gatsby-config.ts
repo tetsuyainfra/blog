@@ -172,6 +172,20 @@ const config: GatsbyConfig = {
     //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
     //   },
     // },
+    //
+    // SSR Plugin
+    //
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto:300,400,500,700`,
+          `Noto Sans JP\:wght@300;400;500;700`,
+          // `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: 'swap',
+      },
+    },
   ],
 }
 

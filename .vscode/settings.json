@@ -2,8 +2,11 @@
   "editor.formatOnSave": true,
   "cSpell.words": [
     "frontmatter",
+    "Noto",
+    "Roboto",
     "tetsuyainfra",
-    "typecheck"
+    "typecheck",
+    "wght"
   ],
   // "typescript.tsdk": "node_modules/typescript/lib"
 }
