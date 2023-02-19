@@ -1,8 +1,12 @@
-name: Testing environment
+name: Test Act
 run-name: ${{ github.actor }} is testing
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
 jobs:
-  my-job:
+  test-job:
     name: My Job
     runs-on: ubuntu-latest
     steps:

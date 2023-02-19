@@ -1,7 +1,8 @@
 # 折り返し行
 printWidth: 80
 # 複数行の場合、可能な限り末尾のコンマを出力
-trailingComma: "es5"
+# trailingComma: "es5"
+trailingComma: "all" # ES2017～, Typescript2.7～が必要
 # tab size
 tabWidth: 2
 # スペースをタブに変換するか

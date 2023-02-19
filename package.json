@@ -1,8 +1,8 @@
 {
-  "name": "blog-tetsuyainfra",
+  "name": "tetsuyainfra-s-hideout",
   "version": "1.0.0",
   "private": true,
-  "description": "blog for tetsuyainfra.github.io",
+  "description": "tetsuyainfra-s-hideout",
   "author": "tetsuyainfra",
   "keywords": [
     "gatsby"
@@ -11,7 +11,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -19,37 +19,36 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/cache": "^11.10.5",
-    "@emotion/react": "^11.10.5",
-    "@emotion/server": "^11.10.0",
-    "@emotion/styled": "^11.10.5",
-    "@mdx-js/react": "^2.2.1",
-    "@mui/material": "^5.11.8",
-    "date-fns": "^2.29.3",
-    "date-fns-tz": "^2.0.0",
-    "gatsby": "^5.5.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mdx-js/react": "^2.3.0",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "^5.11.9",
+    "gatsby": "^5.6.1",
+    "gatsby-plugin-bundle-stats": "^4.2.1",
     "gatsby-plugin-emotion": "^8.6.0",
-    "gatsby-plugin-feed": "^5.6.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-image": "^3.5.0",
+    "gatsby-plugin-image": "^3.6.0",
     "gatsby-plugin-manifest": "^5.6.0",
-    "gatsby-plugin-sharp": "^5.5.0",
-    "gatsby-remark-images": "^7.6.0",
-    "gatsby-remark-prismjs": "^7.6.0",
-    "gatsby-remark-responsive-iframe": "^6.6.0",
-    "gatsby-source-filesystem": "^5.5.0",
-    "gatsby-transformer-remark": "^6.6.0",
-    "gatsby-transformer-sharp": "^5.5.0",
+    "gatsby-plugin-mdx": "^5.6.0",
+    "gatsby-plugin-sharp": "^5.6.0",
+    "gatsby-plugin-sitemap": "^6.6.0",
+    "gatsby-source-filesystem": "^5.6.0",
+    "gatsby-transformer-sharp": "^5.6.0",
+    "js-yaml": "^4.1.0",
+    "luxon": "^3.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "url-slug": "^3.0.4"
+    "react-cookie": "^4.1.1",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/luxon": "^3.2.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "typescript": "^4.9.5",
-    "typescript-plugin-css-modules": "^4.1.1",
-    "utility-types": "^3.10.0"
+    "lodash.uppercase": "^4.3.0",
+    "lodash.upperfirst": "^4.3.1",
+    "remark-gfm": "^3.0.1",
+    "slug": "^8.2.2",
+    "typescript": "^4.9.5"
   }
 }

@@ -2,6 +2,7 @@
 .secrets
 
 # project files
+artifacts
 .cache/
 public
 src/gatsby-types.d.ts
