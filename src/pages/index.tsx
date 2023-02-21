@@ -10,7 +10,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <Link to="/blog">Blog</Link>
         </li>
         <li>
-          <Link to="/links">Link</Link>
+          <Link to="/link">Link</Link>
         </li>
       </ul>
     </Layout>

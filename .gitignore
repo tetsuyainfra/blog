@@ -3,7 +3,7 @@
 
 # project files
 artifacts
-.cache/
+.cache
 public
 src/gatsby-types.d.ts
 
