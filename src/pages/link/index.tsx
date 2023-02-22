@@ -27,9 +27,9 @@ const LinksPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           {data.map(({ node }, i) => (
-            <Grid key={i} item xs={2}>
+            <Grid key={i} item xs={6} md={2}>
               <LinkCard key={i}>
                 <h2>
                   {node.weight}:{node.category}

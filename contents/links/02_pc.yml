@@ -8,16 +8,22 @@ list:
   url: https://pc.watch.impress.co.jp/
 - name: AKIBA PC Hotline!
   url: https://akiba-pc.watch.impress.co.jp/
-- name: 電子工作キット(AKIBA PC Hotline!)
+- name: 電子工作キット(AKIBA PC)
   url: https://akiba-pc.watch.impress.co.jp/category/gadgets/elkit/
 - name: 自作とゲームと趣味の日々
   url: http://blog.livedoor.jp/wisteriear/
 - name: ちもろぐ
   url: https://chimolog.co/
-- name: RTINGS.com
-  url: https://www.rtings.com/
+- name: PCパーツまとめ
+  url: http://blog.livedoor.jp/bluejay01-review/
+- name: ギャズログ
+  url: https://gazlog.com/
 - name: Phoronix
   url: https://www.phoronix.com/scan.php?page=home
+- name: VideoCardz.com
+  url: https://videocardz.com/
+- name: RTINGS.com
+  url: https://www.rtings.com/
 - name: ServerTheHome
   url: https://www.servethehome.com/
 - name: StorageReview
@@ -28,10 +34,6 @@ list:
   url: https://www.anandtech.com/
 - name: Guru3D.co
   url: https://www.guru3d.com/
-- name: VideoCardz.com
-  url: https://videocardz.com/
-- name: PCパーツまとめ
-  url: http://blog.livedoor.jp/bluejay01-review/
 - name: GSMArena
   url: https://www.gsmarena.com/
 - name: igor´sLAB
