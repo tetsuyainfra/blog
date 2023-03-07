@@ -12,5 +12,7 @@ list:
   url:  https://qiita.com/
 - name: dev.to
   url:  https://dev.to/
+- name: ChatGPT
+  url:  https://chat.openai.com/
 - name: Youtube
   url:  https://www.youtube.com/
