@@ -5,6 +5,9 @@ list:
   - name: Google Developers Japan
     url: https://developers-jp.googleblog.com/
 
+  - name: NTTデータ先端コラム
+    url: https://www.intellilink.co.jp/column.aspx
+
   - name: クックパッド開発者ブログ
     url: https://techlife.cookpad.com/
 
