@@ -8,5 +8,13 @@
     "typecheck",
     "wght"
   ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:blog}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
   // "typescript.tsdk": "node_modules/typescript/lib"
 }
