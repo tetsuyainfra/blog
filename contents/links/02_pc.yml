@@ -1,47 +1,49 @@
 ---
 weight: 2
-category:  pc
+category: pc
 list:
-- name: ASCII.jp － 自作PC
-  url: https://ascii.jp/pc/
-- name: PC Watch
-  url: https://pc.watch.impress.co.jp/
-- name: AKIBA PC Hotline!
-  url: https://akiba-pc.watch.impress.co.jp/
-- name: エルミタージュ秋葉原
-  url: https://www.gdm.or.jp/
-- name: 電子工作キット(AKIBA PC)
-  url: https://akiba-pc.watch.impress.co.jp/category/gadgets/elkit/
-- name: 自作とゲームと趣味の日々
-  url: http://blog.livedoor.jp/wisteriear/
-- name: ちもろぐ
-  url: https://chimolog.co/
-- name: PCパーツまとめ
-  url: http://blog.livedoor.jp/bluejay01-review/
-- name: ギャズログ
-  url: https://gazlog.com/
-- name: ニッチなPCゲーマー
-  url: https://www.nichepcgamer.com/
+  - name: ASCII.jp － 自作PC
+    url: https://ascii.jp/pc/
+  - name: PC Watch
+    url: https://pc.watch.impress.co.jp/
+  - name: AKIBA PC Hotline!
+    url: https://akiba-pc.watch.impress.co.jp/
+  - name: エルミタージュ秋葉原
+    url: https://www.gdm.or.jp/
+  - name: 電子工作キット(AKIBA PC)
+    url: https://akiba-pc.watch.impress.co.jp/category/gadgets/elkit/
+  - name: 自作とゲームと趣味の日々
+    url: http://blog.livedoor.jp/wisteriear/
+  - name: ちもろぐ
+    url: https://chimolog.co/
+  - name: PCパーツまとめ
+    url: http://blog.livedoor.jp/bluejay01-review/
+  - name: ギャズログ
+    url: https://gazlog.com/
+  - name: ニッチなPCゲーマー
+    url: https://www.nichepcgamer.com/
+  - name: コスパ！へようこそ - コスパ！
+    url: https://2tom.jp/
 
-- name: Phoronix
-  url: https://www.phoronix.com/scan.php?page=home
-- name: VideoCardz.com
-  url: https://videocardz.com/
-- name: RTINGS.com
-  url: https://www.rtings.com/
-- name: ServerTheHome
-  url: https://www.servethehome.com/
-- name: StorageReview
-  url: https://www.storagereview.com/
-- name: Tom's Hardware
-  url: https://www.tomshardware.com/
-- name: AnandTech
-  url: https://www.anandtech.com/
-- name: Guru3D.co
-  url: https://www.guru3d.com/
-- name: GSMArena
-  url: https://www.gsmarena.com/
-- name: igor´sLAB
-  url: https://www.igorslab.de/
-- name: DistroWatch
-  url: https://distrowatch.com/
+  - name: Phoronix
+    url: https://www.phoronix.com/scan.php?page=home
+  - name: VideoCardz.com
+    url: https://videocardz.com/
+  - name: RTINGS.com
+    url: https://www.rtings.com/
+  - name: ServerTheHome
+    url: https://www.servethehome.com/
+  - name: StorageReview
+    url: https://www.storagereview.com/
+  - name: Tom's Hardware
+    url: https://www.tomshardware.com/
+  - name: AnandTech
+    url: https://www.anandtech.com/
+  - name: Guru3D.co
+    url: https://www.guru3d.com/
+  - name: GSMArena
+    url: https://www.gsmarena.com/
+  - name: igor´sLAB
+    url: https://www.igorslab.de/
+  - name: DistroWatch
+    url: https://distrowatch.com/

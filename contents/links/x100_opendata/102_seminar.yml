@@ -1,0 +1,15 @@
+---
+weight: 102
+category: OD(seminar)
+list:
+  # 正確にはオープンデータじゃないけど
+  - name: Get started | Learning Music
+    url: https://learningmusic.ableton.com/index.html
+  - name: Generative AI for Beginners
+    url: https://microsoft.github.io/generative-ai-for-beginners/#/translations/ja-jp/
+  - name: Brilliant | Learn interactively
+    url: https://brilliant.org/
+  - name: Git Internals - Learn by Building Your Own Git
+    url: https://www.leshenko.net/p/ugit/
+  - name: Building a Rust service with Nix(他にも有り)
+    url: https://fasterthanli.me/series/building-a-rust-service-with-nix

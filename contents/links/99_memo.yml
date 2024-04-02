@@ -1,6 +1,6 @@
 ---
 weight: 99
-category: OSS
+category: MEMO
 list:
-- name: HACS Home Assistant Community Store
-  url:  https://hacs.xyz/
+  - name: 患者向け医療情報サイト総まとめ
+    url: https://keiyouwhite.com/guideline-for-patients

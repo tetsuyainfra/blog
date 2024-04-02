@@ -6,7 +6,8 @@ list:
     url: https://gigazine.net/
   - name: PC Watch
     url: https://pc.watch.impress.co.jp/
-  - name: ギズモード・ジャパン
-    url: https://www.gizmodo.jp/
+  # マクアケ宣伝が多くなったのでコメントアウト
+  # - name: ギズモード・ジャパン
+  #   url: https://www.gizmodo.jp/
   - name: Engadget
     url: https://japanese.engadget.com/

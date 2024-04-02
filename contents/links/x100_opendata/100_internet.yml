@@ -1,0 +1,8 @@
+---
+weight: 100
+category: OD(net)
+list:
+  - name: RFC日本語訳一覧
+    url: https://tex2e.github.io/rfc-translater/html/index.html
+  - name: Reverse DNS (RDNS)
+    url: https://opendata.rapid7.com/sonar.rdns_v2/
