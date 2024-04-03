@@ -1,3 +1,8 @@
 # Custom Dictionary Words
 Engadget
 Gigazine
+hackernews
+pygo
+Qiita
+WUYTS
+YOSHUA

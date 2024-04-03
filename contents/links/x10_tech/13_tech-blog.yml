@@ -2,10 +2,12 @@
 weight: 13
 category: Prog-blog
 list:
+  - name: YOSHUA WUYTS(Rust)
+    url: https://blog.yoshuawuyts.com/
   - name: びりあるの研究ノート
     url: https://blog.visvirial.com/
 
-  - name: 牌語備忘録 -pygo
+  - name: 牌語備忘録
     url: https://cortyuming.hateblo.jp/
 
   - name: ネットワークエンジニアのメモ | iPhone、iPad、スマホ、Cisco、Network

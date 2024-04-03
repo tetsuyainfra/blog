@@ -16,3 +16,5 @@ list:
     url: https://chat.openai.com/
   - name: Youtube
     url: https://www.youtube.com/
+  - name: Programming Idioms
+    https://programming-idioms.org/
