@@ -16,5 +16,7 @@ list:
     url: https://chat.openai.com/
   - name: Youtube
     url: https://www.youtube.com/
+  - name: ニコニコ
+    url: https://www.nicovideo.jp/ranking
   - name: Programming Idioms
     https://programming-idioms.org/
