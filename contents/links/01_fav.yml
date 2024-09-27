@@ -4,6 +4,8 @@ category: fav
 list:
   - name: hackernews
     url: https://news.ycombinator.com/news
+  - name: Hackaday
+    url: https://hackaday.com/
   - name: TechFeed
     url: https://techfeed.io/categories/all
   - name: スラド
