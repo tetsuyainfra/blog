@@ -18,6 +18,8 @@ list:
     url: https://chat.openai.com/
   - name: Youtube
     url: https://www.youtube.com/
+  - name: Twitch
+    url: https://twitch.com/
   - name: ニコニコ
     url: https://www.nicovideo.jp/ranking
   - name: Programming Idioms
