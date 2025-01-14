@@ -1,0 +1,10 @@
+---
+weight: 2
+title:  utils
+list:
+- name: ChatGPT
+  url: https://chatgpt.com/
+- name: DeepL
+  url: https://www.deepl.com/ja/translator
+- name: Google翻訳
+  url: https://translate.google.co.jp/?hl=ja&sl=en&tl=ja&op=translate
