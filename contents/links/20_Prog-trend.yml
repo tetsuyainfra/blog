@@ -10,4 +10,6 @@ list:
     url: https://github.com/trending/
   - name: Design Pattern by Chrome
     url: https://web.dev/patterns?hl=ja
+  - name: Open UI
+    url: https://open-ui.org/
   
