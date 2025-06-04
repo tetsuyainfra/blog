@@ -6,5 +6,7 @@ list:
   url: https://chatgpt.com/
 - name: DeepL
   url: https://www.deepl.com/ja/translator
+- name: DeepWiki
+  url: https://deepwiki.com/
 - name: Google翻訳
   url: https://translate.google.co.jp/?hl=ja&sl=en&tl=ja&op=translate
