@@ -22,6 +22,8 @@ list:
     url: https://twitch.com/
   - name: ニコニコ
     url: https://www.nicovideo.jp/ranking
+  - name: アベプラ
+    url: https://abema.tv/video/title/89-66
   - name: Programming Idioms
     url: https://programming-idioms.org/
   - name: Kyoto U
