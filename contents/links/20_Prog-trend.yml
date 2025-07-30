@@ -20,3 +20,5 @@ list:
     url: https://gethomepage.dev/
   - name: True Charts List (for k8s)
     url: https://truecharts.org/charts/description-list/
+  - name: Proxmox VE Helper-Scripts
+    url: https://community-scripts.github.io/ProxmoxVE/
