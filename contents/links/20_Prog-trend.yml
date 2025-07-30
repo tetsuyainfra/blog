@@ -14,4 +14,9 @@ list:
     url: https://open-ui.org/
   - name: ヒューマンインターフェース ガイドライン
     url: https://www.sociomedia.co.jp/category/shig
-  
+  - name: Awesome-Selfhosted
+    url: https://github.com/awesome-selfhosted/awesome-selfhosted
+  - name: homepage
+    url: https://gethomepage.dev/
+  - name: True Charts List (for k8s)
+    url: https://truecharts.org/charts/description-list/
