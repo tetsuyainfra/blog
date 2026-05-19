@@ -13,7 +13,7 @@ NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
 
 [tools]
 "npm:npm" = "latest"
-pre-commit = "latest"
+prek = "latest"
 
 # [tasks.install]
 # alias = "i"

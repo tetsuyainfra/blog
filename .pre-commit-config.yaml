@@ -25,3 +25,15 @@ repos:
       - id: detect-private-key
       - id: detect-aws-credentials
         args: ["--allow-missing-credentials"]
+  - repo: https://github.com/oxc-project/mirrors-oxlint
+    rev: v1.65.0 # 使用するバージョンを固定
+    hooks:
+      - id: oxlint # リポジトリ側で定義済みのフックIDを指定
+
+  - repo: local
+    hooks:
+      - id: oxfmt
+        name: oxfmt (md/mdx) # 実行時の表示名
+        entry: npx oxfmt --write # 実行するコマンド
+        language: node # ローカルの実行環境をそのまま使う
+        files: \.(md|mdx)$ # 対象ファイルを正規表現で絞り込む
