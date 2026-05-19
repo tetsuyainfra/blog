@@ -9,7 +9,7 @@ repos:
         args: ["--autofix"]
         exclude: |
           (?x)^(
-            package.json
+            package.json|
             package-lock.json
           )$
       - id: check-toml
