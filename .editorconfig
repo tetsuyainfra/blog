@@ -1,0 +1,32 @@
+# EditorConfigは素晴らしい: https://EditorConfig.org
+
+# 最上位のEditorConfigファイル
+root = true
+
+# 各ファイルの末尾に改行を入れるUnixスタイルの改行
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# 波括弧展開記法を使用して複数のファイルに一致
+# デフォルトの文字セットを設定
+[*.{js,py,astro}]
+charset = utf-8
+
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+indent_style = space
+indent_size = 2
+
+# libディレクトリ内のすべてのJSファイルのインデントオーバーライド
+# [lib/**.js]
+# indent_style = space
+# indent_size = 2
+
+# package.jsonまたは.travis.ymlという正確なファイル名に一致
+# [{package.json,.travis.yml}]
+# indent_style = space
+# indent_size = 2

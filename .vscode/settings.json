@@ -3,5 +3,13 @@
         {
             "file": ".github/commit-instructions.md"
         }
-    ]
+    ],
+    "yaml.schemas": {
+        "https://www.schemastore.org/pre-commit-config.json": "file:///home/tetsuyainfra/work/blog/.pre-commit-config.yaml"
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    }
 }
